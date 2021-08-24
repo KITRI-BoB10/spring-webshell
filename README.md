@@ -1,25 +1,31 @@
-![Java CI with Maven](https://github.com/wlanboy/WebShell/workflows/Java%20CI%20with%20Maven/badge.svg?branch=master)
+## spring-webshell
+> Spring Boot based webfrontend for local shell access ✨  
+> Dependencies: Java 11 JDK, Maven 3.5  
+</br>
 
-# WebShell
-Spring Boot based webfrontend for local shell access
+### Build Service Config
+#### Build java archive file (IntelliJ)
+```sh
+Maven > Lifecycle > package
+```
+#### Java archive file path
+```sh
+$ /spring-webshell/target/webshell-0.0.2-SNAPSHOT.jar
+```
+#### jar File Execution (Linux)
+```sh
+$ java -jar ./target/webshell-0.0.2-SNAPSHOT.jar
+```
+</br>
 
-## Dependencies
-At least: Java 11 and Maven 3.5
+### Connect Shell throuh Browser
+- URL: localhost:8001/login
+- ID: korkeep, Password: korkeep
+> ![image](https://user-images.githubusercontent.com/20378368/130558876-1be604a0-b352-47e3-ae1e-f0c258a66437.png)
+</br>
 
-## Build Service Config
-- mvn package -DskipTests=true
-
-### Windows
-- java -jar target\webshell-0.0.2-SNAPSHOT.jar
-
-### Linux (service enabled)
-- ./target/webshell-0.0.2-SNAPSHOT.jar start
-
-## Docker Hub
-https://hub.docker.com/r/wlanboy/webshell
-
-## Docker build
-- docker build -t serviceconfig:latest . --build-arg JAR_FILE=./target/webshell-0.0.2-SNAPSHOT.jar
-
-## Docker run
-- docker run --name webshell -d -p 8080:8001 -v /tmp:/tmp wlanboy/webshell:latest
+### Input shell command
+```sh
+$ pwd
+```
+> ![image](https://user-images.githubusercontent.com/20378368/130559592-ada69685-12a0-4642-bebe-6cfdadf210f2.png)
