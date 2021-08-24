@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Git') {
       steps {
-        git(url: 'https://github.com/wlanboy/WebShell.git', branch: 'master')
+        git(url: 'https://github.com/korkeep/spring-webshell.git', branch: 'master')
       }
     }
     stage('Build') {

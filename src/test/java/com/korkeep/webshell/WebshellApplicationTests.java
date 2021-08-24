@@ -1,4 +1,4 @@
-package com.wlanboy.webshell;
+package com.korkeep.webshell;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
