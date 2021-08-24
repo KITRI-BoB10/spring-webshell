@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: webshell
+  main:
+    banner-mode: "off"
+server:
+  port: ${PORT:8001}

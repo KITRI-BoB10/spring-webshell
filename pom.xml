@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.wlanboy</groupId>
+	<artifactId>webshell</artifactId>
+	<version>0.0.2-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>webshell</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent -->
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.10.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>11</java.version>
+		<webjars-locator.version>0.41</webjars-locator.version>
+		<bootstrap.version>4.6.0-1</bootstrap.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>		
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+	    <dependency>
+	        <groupId>org.webjars</groupId>
+	        <artifactId>webjars-locator</artifactId>
+	        <version>${webjars-locator.version}</version>
+	    </dependency>        
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>bootstrap</artifactId>
+		    <version>${bootstrap.version}</version>
+		</dependency>		
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <scope>test</scope>  
+		</dependency> 
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <embeddedLaunchScriptProperties>
+                        <mode>service</mode>
+                    </embeddedLaunchScriptProperties>
+                    <executable>true</executable>
+                </configuration>
+				<executions>
+				<execution>
+					<goals>
+					<goal>build-info</goal>
+					</goals>
+					<configuration>
+					<additionalProperties>
+						<encoding.source>UTF-8</encoding.source>
+						<encoding.reporting>UTF-8</encoding.reporting>
+						<java.source>${maven.compiler.source}</java.source>
+						<java.target>${maven.compiler.target}</java.target>
+					</additionalProperties>
+					</configuration>
+				</execution>
+				</executions>			
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
